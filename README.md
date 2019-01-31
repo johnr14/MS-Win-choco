@@ -24,16 +24,20 @@ VBoxManage  modifyhd Permanent-disk.vdi --type writethrough
 #5 Boot new VM and use disk administration to initialyse the second disk. Then format it NTFS. 
 
 #6 Install chocolaty by running in Administrator:cmd
+
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
 #7 Install git and chocolateygui
 choco install git chocolateygui --acceptlicense -y --package-parameters "--includeRecommended" -c D:\To-Install\Chocolatey\DL
 
-#8 Git clone the scripts
-cd D:\To-Install\Chocolatey\
+#8 Git clone the scripts from git bash
+cd /d/To-Install/Chocolatey
 git clone ...
 
 #9 Go to D:\To-Install\Chocolatey\ and run the scripts needed.
+Install run .ps1 as administrator from context menu.
+https://www.tenforums.com/attachments/tutorials/102357d1474400469-run-administrator-add-ps1-file-context-menu-windows-10-a-add_ps1_run_as_administrator.reg
+from https://www.tenforums.com/tutorials/64349-run-administrator-add-ps1-file-context-menu-windows-10-a.html
 
 #10 Backup your current installed applications by running 
 99-generate-pkglist.ps1
